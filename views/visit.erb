@@ -7,20 +7,20 @@
   
   <div class="form-group">
     <label>Ваше имя</label>
-    <input id="bbb" name="username" type="text" class="form-control" placeholder="Введите ваше имя">
+    <input id="bbb" name="username" type="text" class="form-control" placeholder="Введите ваше имя" value=<%=@username%>>
   </div>
   <div class="form-group">
 
   <div class="form-group">
     <label>Телефон</label>
-    <input name="phone" type="text" class="form-control ccc" placeholder="Введите ваш телефон">
+    <input name="phone" type="text" class="form-control ccc" placeholder="Введите ваш телефон" value=<%=@phone%>>
   </div>
   <div class="form-group">
 
   <div class="form-group">
       <label>Желаемая дата записи</label><br>
 
-    <input data-provide="datepicker" type='date' name="datetime" data-date-format="dd/mm/yyyy" data-date-end-date="+7d" data-date-today-Highlight='true' data-date-start-date='0d'>
+    <input data-provide="datepicker" type='date' name="datetime" data-date-format="dd/mm/yyyy" data-date-end-date="+7d" data-date-today-Highlight='true' data-date-start-date='0d' value=<%=@datetime%>>
 
   <br><label>Выберите парикмахера</label>
   <select class="form-control ccc", name='barber'>
