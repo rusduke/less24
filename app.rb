@@ -31,13 +31,16 @@ post '/visit' do
 	hh = {:username => 'Введите имя', 
 		  :phone => 'Введите телефон', 
 		  :datetime => 'Введите дату'}
-	hh.each do |key, value|
-		if params[key] == ''
-			@error = hh[key]
-			return erb :visit
-		end
+#	hh.each do |key, value|
+#		if params[key] == ''
+#			@error = hh[key]
+#			return erb :visit
+#		end
+#	end
+	@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
+	if @error != ''
+		return erb :visit
 	end
-
 
 
 
@@ -45,6 +48,9 @@ post '/visit' do
 	f.write "User: #{@username}, phone #{@phone}, date & time #{@datetime}, #{@barber}, #{@color}\n"
 	#erb :visit
 	erb "User: #{@username}, phone #{@phone}, date & time #{@datetime}, #{@barber}, #{@color}\n"
+
+	
+
 end 
 
 get '/contacts' do
@@ -62,3 +68,4 @@ post '/contacts' do
 	end
 	erb :contacts
 end 
+
